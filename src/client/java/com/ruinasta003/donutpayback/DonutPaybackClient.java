@@ -1,1 +1,11 @@
-src/client/java/com/ruinasta003/donutpayback/DonutPaybackClient.java
+package com.ruinasta003.donutpayback;
+
+import net.fabricmc.api.ClientModInitializer;
+
+public class DonutPaybackClient implements ClientModInitializer {
+
+    @Override
+    public void onInitializeClient() {
+        System.out.println("[DonutPayback] Mod loaded!");
+    }
+}
