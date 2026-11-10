@@ -1,18 +1,35 @@
-
 {
   "schemaVersion": 1,
-  "id": "donutpayback",
-  "version": "1.0.0",
-  "name": "Donut Payback Helper",
-  "description": "DonutSMP payment command helper",
-  "environment": "client",
+  "id": "donutgamble",
+  "version": "${version}",
+  "name": "DonutPayback",
+  "description": "Tracks DonutSMP /pay payments, pending confirmations, and repayment reminders.",
+  "authors": [
+    "DonutPayback"
+  ],
+  "contact": {
+    "sources": "https://github.com/"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/donutgamble/icon.png",
+  "environment": "*",
   "entrypoints": {
+    "main": [
+      "donutgamble.Donutgamble"
+    ],
     "client": [
-      "com.ruinasta003.donutpayback.DonutPaybackClient"
+      "donutgamble.client.DonutgambleClient"
     ]
   },
+  "mixins": [
+    "donutgamble.mixins.json",
+    {
+      "config": "donutgamble.client.mixins.json",
+      "environment": "client"
+    }
+  ],
   "depends": {
-    "fabricloader": ">=0.18.0",
+    "fabricloader": ">=0.20.1",
     "minecraft": "~1.21.11",
     "java": ">=21",
     "fabric-api": "*"
